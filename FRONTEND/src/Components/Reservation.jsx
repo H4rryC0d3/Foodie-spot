@@ -18,7 +18,7 @@ const Reservation = () => {
         e.preventDefault();
         try {
             const { data } = await axios.post(
-                "https://foodie-spot-28.vercel.app/send",
+                "https://foodie-spot-28.vercel.app/api/v1/reservation/send",
                 { firstName, lastName, email, phone, date, time },
                 {
                     headers: {
