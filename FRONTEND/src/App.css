@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap");
+
+* {
+  font-family: "Oswald", sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+
+/******************* NOT FOUND PAGE STYLING **************/
+/**********************************************************************************************************************/
+.notFound {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: url(/background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+.notFound .container {
+  max-width: 1500px;
+  text-align: center;
+}
+.notFound .container img {
+  margin-bottom: 2rem;
+}
+.notFound .container h1 {
+  font-size: 2.75rem;
+  font-weight: 300;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+.notFound .container p {
+  font-size: 18px;
+  font-weight: 300;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+.notFound .container a {
+  border: 1px solid black;
+  padding: 8px 28px;
+  border-radius: 30px;
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 15px;
+  color: #111;
+}
+.notFound .container a span {
+  margin-left: 1rem;
+  padding: 6px;
+  background: #111;
+  border-radius: 100%;
+  color: #fff;
+}
+.notFound .container a:hover {
+  color: #fff;
+  background: #111;
+  transition: ease-in-out 0.3s;
+}
+.notFound .container a:hover span {
+  background: #fff;
+  color: #111;
+}
+@media (max-width: 600px) {
+  .notFound {
+    padding: 30px 20px;
+  }
+  .notFound .container img {
+    width: 100%;
+  }
+  .notFound .container h1 {
+    font-size: 1.75rem;
+  }
+}
+/**********************************************************************************************************************/

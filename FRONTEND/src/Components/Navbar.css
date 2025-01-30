@@ -1,0 +1,171 @@
+nav {
+  display: flex;
+  position: fixed;  
+  top: 0;
+  left: 0;
+  width: 100%; 
+  z-index: 1000; 
+  padding: 10px 10px;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+
+.scrolled {
+  background: rgba(255, 255, 255, 0.9); 
+  padding: 15px 10px; 
+}
+
+nav::after {
+  content: "";
+  position: absolute;
+  height: 0.6px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(201, 201, 201);
+}
+nav .logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+nav .navLinks {
+  flex: 2;
+}
+nav .navLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .navLinks .links {
+  display: flex;
+  gap: 25px;
+}
+nav .navLinks .links a {
+  text-decoration: none;
+  color: #555;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 1.4px;
+}
+nav .navLinks .links a:hover {
+  color: #222;
+  transition: 0.3s;
+  cursor: pointer;
+}
+nav .menuBtn {
+  padding: 8px 20px;
+  color: black;
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 20px;
+  font-size: 16px;
+}
+nav .menuBtn:hover {
+  color: #fff;
+  background: #222;
+  transition: 0.3s;
+  cursor: pointer;
+}
+nav .hamburger {
+  display: none;
+}
+nav svg {
+  font-size: 1.75rem;
+}
+@media (max-width: 1520px) {
+  nav {
+    min-width: 100%;
+    padding: 25px 20px 40px 20px;
+  }
+}
+@media (max-width: 1100px) {
+  nav {
+    z-index: 20;
+    position: unset;
+    background: #ffffff63;
+    padding: 10px 30px;
+  }
+  nav::after {
+    content: "";
+    display: none;
+  }
+  nav .hamburger {
+    display: flex;
+  }
+  nav .navLinks {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: -100%;
+    background: #fff;
+    width: 100%;
+    left: 0;
+    padding: 15px 7.5px;
+    z-index: -1;
+    transition: 0.3s;
+  }
+  nav .showmenu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 67px;
+    background: #fff;
+    width: 100%;
+    left: 0;
+    padding: 15px 7.5px;
+    transition: 0.3s;
+    margin: 0 15px;
+    width: 96.7vw;
+    margin-right: 30px;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+  }
+  nav .showmenu .links {
+    flex-direction: column;
+    text-align: center;
+  }
+  nav .menuBtn {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 800px) {
+  nav .showmenu {
+    width: 96vw;
+  }
+}
+@media (max-width: 650px) {
+  nav .showmenu {
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+@media (max-width: 450px) {
+  nav {
+    padding: 10px 15px;
+  }
+
+  nav .logo {
+    font-size: 1.5rem;
+  }
+
+  nav .menuBtn {
+    font-size: 14px;
+    padding: 6px 15px;
+  }
+
+  nav .showmenu {
+    top: 55px;
+    width: 100%;
+    padding: 12px 5px;
+  }
+
+  nav .showmenu .links a {
+    font-size: 16px;
+  }
+}

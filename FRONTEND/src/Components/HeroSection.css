@@ -1,0 +1,167 @@
+.heroSection {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+    justify-content: space-between;
+    align-items: center;
+    background: url(/background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    padding: 68px 15px;
+  }
+  .heroSection .container {
+    display: flex;
+    max-width: 1200px;
+    min-width: 1200px;
+  }
+  .heroSection .container .banner:first-child {
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .heroSection .container .banner .largeBox {
+    width: 100%;
+  }
+  .heroSection .container .banner .combined_boxes {
+    display: flex;
+    width: 100%;
+  }
+  .heroSection .container .banner .title {
+    font-size: 8.5rem;
+    font-weight: 200;
+  }
+  .heroSection .container .banner .textAndLogo {
+    width: 50%;
+  }
+  .heroSection .container .banner .textWithSvg {
+    position: relative;
+  }
+  .heroSection .container .banner .textWithSvg img {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .heroSection .container .banner:first-child .dishes_title {
+    display: none;
+  }
+  .heroSection .container .banner:first-child .imageBox {
+    width: 50%;
+  }
+  .heroSection .container .banner:last-child .imageBox {
+    width: 100%;
+  }
+  .heroSection .container .banner .imageBox img {
+    width: 300px;
+    height: 385px;
+    border: 2px ; /* Adds a 2px solid black border */
+    border-radius: 10px; 
+  }
+  .heroSection .container .banner:last-child .imageBox {
+    text-align: end;
+  }
+  .heroSection .container .banner:last-child {
+    flex: 1;
+  }
+  @media (max-width: 1280px) {
+    .heroSection .container {
+      width: 100%;
+      min-width: fit-content;
+      padding: 30px 20px;
+    }
+  }
+  @media (max-width: 1072px) {
+    .heroSection .container .banner .title {
+      font-size: 6.5rem;
+    }
+    .heroSection .container .banner .imageBox img {
+      width: 250px;
+      height: 335px;
+    }
+  }
+  @media (max-width: 880px) {
+    .heroSection .container .banner .title {
+      font-size: 6rem;
+    }
+    .heroSection .container .banner .imageBox img {
+      width: 250px;
+      height: 265px;
+    }
+  }
+  @media (max-width: 830px) {
+    .heroSection .container .banner:last-child .imageBox {
+      height: 350px;
+    }
+    .heroSection .container .banner:last-child .imageBox img {
+      display: none;
+    }
+    .heroSection .container .banner .combined_boxes {
+      flex-direction: column-reverse;
+    }
+    .heroSection .container .banner .textAndLogo {
+      width: 100%;
+      text-align: end;
+    }
+    .heroSection .container .banner .textAndLogo .title,
+    .heroSection .container .banner .textAndLogo .logo {
+      margin-right: 60px;
+    }
+    .heroSection .container .banner:last-child .dishes_title {
+      margin-top: 65px;
+    }
+    .heroSection .container .banner .imageBox img {
+      width: 100%;
+    }
+  }
+  @media (max-width: 720px) {
+    .heroSection .container .banner .title {
+      font-size: 4.5rem;
+    }
+  }
+  @media (max-width: 520px) {
+    .heroSection .container .banner:last-child .dishes_title {
+      display: none;
+    }
+    .heroSection .container .banner:first-child .dishes_title {
+      display: block;
+    }
+    .heroSection .container .banner:first-child {
+      width: 100%;
+    }
+    .heroSection .container .banner:last-child {
+      display: none;
+    }
+    .heroSection .container .banner .title {
+      text-align: center;
+    }
+    .heroSection .container .banner .textAndLogo .title,
+    .heroSection .container .banner .textAndLogo .logo {
+      margin-right: 0;
+    }
+    .heroSection .container .banner .textWithSvg {
+      width: fit-content;
+      margin: 0 auto;
+    }
+    .heroSection .container .banner .textAndLogo {
+      text-align: center;
+    }
+    .heroSection .container .banner:first-child .imageBox {
+      width: 100%;
+      text-align: center;
+    }
+    .heroSection .container .banner:first-child .imageBox img {
+      width: 290px;
+      height: 350px;
+    }
+  }
+  @media(max-width: 650px){
+    .heroSection{
+      padding: 0;
+    }
+  }
+  @media (max-width: 330px) {
+    .heroSection .container .banner:first-child .imageBox img {
+      width: 100%;
+      height: auto;
+    }
+  }

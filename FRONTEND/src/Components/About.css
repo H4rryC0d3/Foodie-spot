@@ -1,0 +1,126 @@
+.about {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9fbf2;
+  }
+  .about .container {
+    max-width: 1500px;
+    min-width: 1500px;
+    display: flex;
+  }
+  .about .container .banner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 80px;
+  }
+  .about .container .banner img {
+    width: 70%;
+    margin-right: 20px;
+    /* height: 80%; */
+  }
+  .heading {
+    font-weight: 200;
+    font-size: 4rem;
+    color: #111;
+  }
+  .about .container .banner .mid {
+    width: 65%;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+  }
+  .about .container .banner .top p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #111;
+    letter-spacing: 2px;
+  }
+  .about .container .banner a {
+    border: 1px solid black;
+    padding: 8px 28px;
+    border-radius: 30px;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 15px;
+    color: #111;
+  }
+  .about .container .banner a span {
+    margin-left: 1rem;
+    padding: 6px;
+    background: #111;
+    border-radius: 100%;
+    color: #fff;
+  }
+  .about .container .banner a:hover {
+    color: #fff;
+    background: #111;
+    transition: ease-in-out 0.3s;
+  }
+  .about .container .banner a:hover span {
+    background: #fff;
+    color: #111;
+  }
+  @media (max-width: 1520px) {
+    .about {
+      padding: 30px 20px;
+    }
+    .about .container {
+      min-width: fit-content;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  
+  @media (max-width: 1050px) {
+    .about .container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .about .container .banner {
+      margin: 0;
+      align-items: center;
+    }
+    .about .container .banner .mid {
+      width: 100%;
+      margin: 20px 0;
+    }
+  }
+  
+  @media (max-width: 786px) {
+    .about .container {
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+    }
+    .about .container .banner img {
+      width: 400px;
+      margin: 0 auto 40px auto;
+    }
+    .about .container .banner {
+      padding: 0;
+      align-items: center;
+    }
+  }
+  
+  @media (max-width: 530px) {
+    .heading {
+      font-size: 3rem;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    .about .container .banner img {
+      width: 100%;
+    }
+  }
+  
