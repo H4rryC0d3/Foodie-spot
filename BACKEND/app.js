@@ -11,7 +11,7 @@ dotenv.config({ path: "./config/config.env" });
 
 app.use(
     cors({
-        origin: ["http://localhost:3000", "http://localhost:5173"], // Allow both ports ((origin: "*")), // Allow all origins
+        origin: ["https://foodie-spot-kappa.vercel.app"], // Allow both ports ((origin: "*")), // Allow all origins
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
         allowedHeaders: ["Content-Type", "Authorization"],
