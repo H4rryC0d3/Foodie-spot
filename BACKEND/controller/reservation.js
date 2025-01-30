@@ -1,30 +1,15 @@
-import mongoose from "mongoose";
-import ErrorHandler from "../error/error.js";
-import { Reservation } from "../models/reservationSchema.js";
-
-export const sendReservation = async (req, res, next) => {
-    const { firstName, lastName, email, phone, date, time } = req.body;
-
-    if (!firstName || !lastName || !email || !phone || !date || !time) {
-        return next(new ErrorHandler("Please fill full reservation form!", 400));
-    }
-
+export const sendReservation = async (req, res) => {
     try {
-        if (mongoose.connection.readyState !== 1) {
-            return next(new ErrorHandler("Database not connected!", 500));
+        console.log("🔹 Received Reservation Data:", req.body);
+
+        // Simulating a response (Replace this with your database logic)
+        if (!req.body.name || !req.body.email || !req.body.date) {
+            return res.status(400).json({ success: false, message: "Missing fields" });
         }
 
-        await Reservation.create({ firstName, lastName, email, phone, date, time });
-
-        res.status(200).json({
-            success: true,
-            message: "Reservation sent successfully!",
-        });
+        return res.status(200).json({ success: true, message: "Reservation Sent Successfully!" });
     } catch (error) {
-        if (error.name === "ValidationError") {
-            const validationErrors = Object.values(error.errors).map(err => err.message);
-            return next(new ErrorHandler(validationErrors.join(" , "), 400));
-        }
-        return next(error);
+        console.error("❌ Error in sendReservation:", error);
+        res.status(500).json({ success: false, message: "Internal Server Error" });
     }
 };
