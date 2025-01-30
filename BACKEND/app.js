@@ -13,7 +13,9 @@ app.use(
     cors({
         origin: [
             "http://localhost:3000", 
-            "http://localhost:5173"],
+            "http://localhost:5173",
+            "https://foodie-spot-28.vercel.app"
+        ],
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
         allowedHeaders: ["Content-Type", "Authorization"],
