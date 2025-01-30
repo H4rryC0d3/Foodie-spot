@@ -15,30 +15,44 @@ const Reservation = () => {
     const navigate = useNavigate();
 
     const handleReservation = async (e) => {
-        e.preventDefault();
-        try {
-            const { data } = await axios.post(
-                "https://foodie-spot-28.vercel.app/api/v1/reservation/send",
-                { firstName, lastName, email, phone, date, time },
-                {
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    withCredentials: true,
-                }
-            );
-            toast.success(data.message);
-            setFirstName("");
-            setLastName("");
-            setPhone("");
-            setEmail("");
-            setTime("");
-            setDate("");
-            navigate("/success");
-        } catch (error) {
-            toast.error(error.response?.data?.message || "Something went wrong!");
-        }
-    };
+    e.preventDefault();
+    try {
+        const reservationData = {
+            firstName,
+            lastName,
+            email,
+            phone,
+            date,
+            time,
+        };
+
+        console.log("Sending reservation data:", reservationData); // ✅ Debugging
+
+        const { data } = await axios.post(
+            "https://foodie-spot-28.vercel.app/api/v1/reservation/send",
+            reservationData,
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                withCredentials: true,
+            }
+        );
+
+        toast.success(data.message);
+        setFirstName("");
+        setLastName("");
+        setPhone("");
+        setEmail("");
+        setTime("");
+        setDate("");
+        navigate("/success");
+
+    } catch (error) {
+        console.error("Reservation error:", error.response?.data); // ✅ Debugging
+        toast.error(error.response?.data?.message || "Something went wrong!");
+    }
+};
 
     return (
         <ReservationSection>
