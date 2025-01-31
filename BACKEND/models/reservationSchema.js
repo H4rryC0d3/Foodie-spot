@@ -24,9 +24,9 @@ const reservationSchema = new mongoose.Schema({
         required: [true, "Phone number is required"],
         validate: {
             validator: function (v) {
-                return /^[0-9]{10}$/.test(v); 
+                return /^[0-9]{10}$/.test(v); // ✅ 10 digits instead of 11
             },
-            message: "Phone number must contain exactly 11 digits!",
+            message: "Phone number must contain exactly 10 digits!",
         },
     },
     time: {
@@ -39,6 +39,4 @@ const reservationSchema = new mongoose.Schema({
     },
 });
 
-// Named export
 export const Reservation = mongoose.model("Reservation", reservationSchema);
-
