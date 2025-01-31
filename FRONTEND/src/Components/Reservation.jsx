@@ -207,28 +207,34 @@ const ReservationSection = styled.section`
         color: #fff;
     }
 
-    @media (max-width: 885px) {
-        .container {
-            flex-direction: column;
-            gap: 30px;
-        }
-        .banner {
-            width: 100%;
-        }
+    @media screen and (max-width: 885px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    @media (max-width: 450px) {
-        .reservation_form_box {
-            width: 100%;
-        }
-        .reservation_form_box h1 {
-            font-size: 2rem;
-        }
+    .banner {
+        width: 100%;
+        padding: 20px;
     }
 
-    @media (max-width: 325px) {
-        .reservation_form_box h1 {
-            font-size: 1.6rem;
-        }
+    .reservation_form_box {
+        width: 100%;
+        max-width: 400px;
     }
+}
+
+@media screen and (max-width: 450px) {
+    .reservation_form_box h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 325px) {
+    .reservation_form_box h1 {
+        font-size: 1.6rem;
+    }
+}
+
 `;
