@@ -29,7 +29,7 @@ const Reservation = () => {
         console.log("Sending reservation data:", reservationData); // ✅ Debugging
 
         const { data } = await axios.post(
-            "https://foodie-spot-28.vercel.app/api/v1/reservation/send",
+            "https://foodiespot-backend-enve.onrender.com",
             reservationData,
             {
                 headers: {
@@ -238,3 +238,4 @@ const ReservationSection = styled.section`
 }
 
 `;
+
