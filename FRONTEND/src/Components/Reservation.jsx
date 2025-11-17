@@ -15,44 +15,30 @@ const Reservation = () => {
     const navigate = useNavigate();
 
     const handleReservation = async (e) => {
-    e.preventDefault();
-    try {
-        const reservationData = {
-            firstName,
-            lastName,
-            email,
-            phone,
-            date,
-            time,
-        };
-
-        console.log("Sending reservation data:", reservationData); // ✅ Debugging
-
-        const { data } = await axios.post(
-            "https://foodiespot-backend-enve.onrender.com",
-            reservationData,
-            {
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                withCredentials: true,
-            }
-        );
-
-        toast.success(data.message);
-        setFirstName("");
-        setLastName("");
-        setPhone("");
-        setEmail("");
-        setTime("");
-        setDate("");
-        navigate("/success");
-
-    } catch (error) {
-        console.error("Reservation error:", error.response?.data); // ✅ Debugging
-        toast.error(error.response?.data?.message || "Something went wrong!");
-    }
-};
+        e.preventDefault();
+        try {
+            const { data } = await axios.post(
+                "http://localhost:4000/api/v1/reservation/send",
+                { firstName, lastName, email, phone, date, time },
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    withCredentials: true,
+                }
+            );
+            toast.success(data.message);
+            setFirstName("");
+            setLastName("");
+            setPhone("");
+            setEmail("");
+            setTime("");
+            setDate("");
+            navigate("/success");
+        } catch (error) {
+            toast.error(error.response?.data?.message || "Something went wrong!");
+        }
+    };
 
     return (
         <ReservationSection>
@@ -207,35 +193,28 @@ const ReservationSection = styled.section`
         color: #fff;
     }
 
-    @media screen and (max-width: 885px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    @media (max-width: 885px) {
+        .container {
+            flex-direction: column;
+            gap: 30px;
+        }
+        .banner {
+            width: 100%;
+        }
     }
 
-    .banner {
-        width: 100%;
-        padding: 20px;
+    @media (max-width: 450px) {
+        .reservation_form_box {
+            width: 100%;
+        }
+        .reservation_form_box h1 {
+            font-size: 2rem;
+        }
     }
 
-    .reservation_form_box {
-        width: 100%;
-        max-width: 400px;
+    @media (max-width: 325px) {
+        .reservation_form_box h1 {
+            font-size: 1.6rem;
+        }
     }
-}
-
-@media screen and (max-width: 450px) {
-    .reservation_form_box h1 {
-        font-size: 2rem;
-    }
-}
-
-@media screen and (max-width: 325px) {
-    .reservation_form_box h1 {
-        font-size: 1.6rem;
-    }
-}
-
 `;
-
